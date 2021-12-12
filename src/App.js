@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import TextInput from "./components/TextInput";
 import Button from "./components/Button";
 
+
 const App = () => {
   const [weight, setWeight] = useState();
   const [height, setHeight] = useState();
@@ -69,9 +70,7 @@ const App = () => {
         />
         
       </div>
-      <div className="row">
-        some text
-      </div>
+
 
       <div className="row">
         <Button label="CALCULATE" onClick={computeBmi} />
