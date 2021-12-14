@@ -1,2 +1,4 @@
 # bmiui
-user interface copied from https://codesandbox.io/u/ridbay
+See https://eqdn.tech/reactjs-bmi-calculator/
+and https://codesandbox.io/u/ridbay
+for rewritten source

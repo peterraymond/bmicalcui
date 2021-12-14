@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import TextInput from "./components/TextInput";
 import Button from "./components/Button";
+import './styles.css';
 
 
 const App = () => {
@@ -50,7 +51,7 @@ const App = () => {
           boxSizing: "border-box",
         }}
       >
-        <h2>Welcome to our BMI Calculator!</h2>
+        <h2>BMI Calculator</h2>
       </div>
       <div className="row">
         <TextInput
