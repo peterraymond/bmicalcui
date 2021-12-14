@@ -6,6 +6,8 @@ import './styles.css';
 
 
 const App = () => {
+
+  /* use state hooks to get the value of the input boxes */
   const [weight, setWeight] = useState();
   const [height, setHeight] = useState();
   const [bmi, setBmi] = useState();
@@ -51,11 +53,11 @@ const App = () => {
           boxSizing: "border-box",
         }}
       >
-        <h2>BMI Calculator</h2>
+        <h2>Pete's Noddy BMI Calculator</h2>
       </div>
       <div className="row">
         <TextInput
-          label="Height"
+          label="height"
           placeholder="Enter height in cm"
           handleChange={handleHeightChange}
           value={height}
@@ -63,7 +65,7 @@ const App = () => {
       </div>
       <div className="row">
         <TextInput
-          label="Weight"
+          label="weight"
           placeholder="Enter weight in kg"
           handleChange={handleWeightChange}
           value={weight}
@@ -74,7 +76,7 @@ const App = () => {
 
 
       <div className="row">
-        <Button label="CALCULATE" onClick={computeBmi} />
+        <Button label="Calculate" onClick={computeBmi} />
       </div>
       <div className="row">
         {
