@@ -26,8 +26,8 @@ const App = () => {
     
     let bmiValue = (weight / (height / 100) ** 2).toFixed(2);
 
-   //let ApiUrl = 'https://30zat9xfgj.execute-api.eu-west-2.amazonaws.com/dev';
-   let ApiUrl = 'http://localhost:4000/bmi';
+   let ApiUrl = 'https://30zat9xfgj.execute-api.eu-west-2.amazonaws.com/dev';
+   //let ApiUrl = 'http://localhost:4000/bmi';
 
     console.log("computeBmi: local bmiValue: " + bmiValue);
 
