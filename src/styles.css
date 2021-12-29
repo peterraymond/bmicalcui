@@ -10,11 +10,11 @@
     align-items: center;
     flex-direction: column;
 
-    /*
-    added to to understand the layout
+    
+    /*added to to understand the layout*/
     border: 1px solid #B22222;
     border-radius: 1px;
-    */
+    
   }
   
   .row {
@@ -38,4 +38,27 @@
     border: 1px solid #B22222;
     border-radius: 1px;
     */
+  }
+
+  label {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+  }
+  
+  * {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  input {
+    height: 14px;
+    width: 200px;
+    font-size: 12px;
+  }
+  
+  button {
+    display: block;
+    margin-top: 12px;
+    height: 24px;
+    font-size: 14px;
   }

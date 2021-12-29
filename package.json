@@ -2,13 +2,13 @@
     "name": "react",
     "version": "1.0.0",
     "description": "React example starter project",
-
     "keywords": [
         "react",
         "starter"
     ],
     "main": "src/index.js",
     "dependencies": {
+        "amazon-cognito-identity-js": "^5.2.3",
         "axios": "^0.24.0",
         "cors": "^2.8.5",
         "react": "16.12.0",
@@ -30,5 +30,4 @@
         "not ie <= 11",
         "not op_mini all"
     ]
-
 }
