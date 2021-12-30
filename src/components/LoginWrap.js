@@ -16,7 +16,7 @@ const LoginWrap = () => {
 
         <h2>Login</h2> 
         <Login />
-        <Settings />
+        {/*<Settings />*/}
       </Account>
   );
 };

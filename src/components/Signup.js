@@ -12,16 +12,21 @@ const Signup = () => {
     UserPool.signUp(email, password, [], null, (err, data) => {
       if (err) {
         console.error(err);
-        document.getElementById("response-message").innerHTML = err.message;
+        if (err != null){
+          document.getElementById("response-message").innerHTML = err.message;
+        }
       }
       console.log(data);
-      document.getElementById("response-message").innerHTML = data.message;
+      if (data != null){
+        document.getElementById("response-message").innerHTML = data.message;
+      }
     });
   };
 
   return (
     <div>
       <Nav/> 
+      <h2>Signup</h2> 
       <form onSubmit={onSubmit}>
         <label htmlFor="email">Email</label>
         <input
@@ -33,7 +38,8 @@ const Signup = () => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         ></input>
-
+        
+        <div>8 chars, 1 upper, 1 special char</div>
         <button type="submit">Signup</button>
         <div id="response-message"></div>
 

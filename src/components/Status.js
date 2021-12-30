@@ -1,9 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
 import { AccountContext } from "./Account";
 import Pool from "../UserPool";
+import { useNavigate } from 'react-router-dom';
 
 const Status = () => {
-  const [status, setStatus] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const { getSession, logout } = useContext(AccountContext);
 
@@ -11,25 +12,29 @@ const Status = () => {
     getSession().then((session) => {
       console.log("Session: ", session);
       JSON.stringify(Pool.getCurrentUser());
-      setStatus(true);
+      setLoggedIn(true);
     }).catch(e => {
         console.log("User session undefined", e);
     });
-  }, [getSession, status]);
+  }, [getSession, loggedIn]);
+
+  const navigate = useNavigate();
+  const routeChange = () =>{ 
+    logout();
+    navigate('/');
+  }
+
 
   return (
     <div>
-        <div style={{ fontSize: "24px" }}>
-             {status ? <button onClick={logout}>Logout</button> : "Please login"}
-        </div>
-        <div style={{ fontSize: "12px" }}>
-            {/*JSON.stringify(Pool.getCurrentUser())*/}
-        </div>
+      {(function() {
+          if (loggedIn) {
+            return <button onClick={routeChange}>Logout</button>;
+          } else {
+            return "";
+          }
+        })()}
     </div>
-
-
-
-
   );
 };
 export default Status;

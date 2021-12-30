@@ -22,6 +22,8 @@ const App = () => {
   const handleHeightChange = (event) => setHeight(event.target.value);
   const handleWeightChange = (event) => setWeight(event.target.value);
 
+  const [calcRequested, setCalcRequested] = useState("");
+
   const computeBmi = () => {
     
     let bmiValue = (weight / (height / 100) ** 2).toFixed(2);
@@ -58,6 +60,8 @@ const App = () => {
     setWeight("")
   };
 
+
+
   const getBmi = (bmi) => {
     
     if (bmi < 18.5) {
@@ -72,23 +76,14 @@ const App = () => {
     if (bmi >= 30) {
       return "Obesity";
     }
+    setCalcRequested(true);
   };
 
   return (
     <div className="App">
     <div className="container">
-      <div
-        style={{
-          display: "block",
-          width: "50%",
-          margin: "0 auto",
-          padding: "20px",
-          boxSizing: "border-box",
-        }}
-      >
-        <h2>BMI Calculator</h2>
-      </div>
       <div className="row">
+      <h2>BMI Calculator</h2>
         <TextInput
           label="name"
           placeholder="Name"
@@ -115,25 +110,19 @@ const App = () => {
           type="number"
           
         />
-        
       </div>
 
 
-      <div className="row">
+      <div>
         <Button label="Calculate" onClick={computeBmi} />
       </div>
-      <div className="row">
-        {
-          isNaN(bmi)?null:<h3>Browser calculated BMI  = {bmi}</h3> 
-
-        }
-        {
-          isNaN(bmi)?null:<h3>Remote API calculated BMI  = {remotebmi}</h3> 
-        }
-        
-      </div>
-      <div className="row">
+      <div>
+        {isNaN(bmi)?null:<h3>Browser calculated BMI  = {bmi}</h3> }
+        {isNaN(bmi)?null:<h3>Remote API calculated BMI  = {remotebmi}</h3>}
         <h3>{bmiClass}</h3>
+
+        {isNaN(bmi) && calcRequested ? <div>Did you enter numbers?!</div> : ""}
+
       </div>
     </div>
     </div>
