@@ -23,6 +23,7 @@ const Login = () => {
 
   return (
     <div>
+      <h2>Login</h2>
       <form onSubmit={onSubmit}>
         <label htmlFor="email">Email</label>
         <input
@@ -39,6 +40,7 @@ const Login = () => {
       </form>
       <div id="response-message"></div>
     </div>
+
   );
 };
 

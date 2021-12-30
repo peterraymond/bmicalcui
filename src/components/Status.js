@@ -27,9 +27,10 @@ const Status = () => {
 
   return (
     <div>
+      <br/>
       {(function() {
           if (loggedIn) {
-            return <button onClick={routeChange}>Logout</button>;
+            return <div>You are logged in <button onClick={routeChange}>Logout</button></div>;
           } else {
             return "";
           }
