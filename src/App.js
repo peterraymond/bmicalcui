@@ -6,7 +6,11 @@ import { Account } from "./components/Account";
 import Status from "./components/Status";
 import Settings from "./components/Settings";
 import Bmi from "./Bmi";
+import Nav from "./components/Nav"
 
+import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+
+/*
 const App = () => {
   return (
        
@@ -23,5 +27,20 @@ const App = () => {
 
   );
 };
+*/
+
+const App = () => {
+    return (
+         
+        <div className="App">
+          <Bmi/>
+          <Nav/>
+        </div>
+    );
+  };
+
+
+
+
 
 export default App;

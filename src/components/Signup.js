@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UserPool from "../UserPool";
+import Nav from "./Nav";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -11,13 +12,16 @@ const Signup = () => {
     UserPool.signUp(email, password, [], null, (err, data) => {
       if (err) {
         console.error(err);
+        document.getElementById("response-message").innerHTML = err.message;
       }
       console.log(data);
+      document.getElementById("response-message").innerHTML = data.message;
     });
   };
 
   return (
     <div>
+      <Nav/> 
       <form onSubmit={onSubmit}>
         <label htmlFor="email">Email</label>
         <input
@@ -31,7 +35,10 @@ const Signup = () => {
         ></input>
 
         <button type="submit">Signup</button>
+        <div id="response-message"></div>
+
       </form>
+
     </div>
   );
 };

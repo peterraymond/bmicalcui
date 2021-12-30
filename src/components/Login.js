@@ -13,9 +13,11 @@ const Login = () => {
     authenticate(email, password)
       .then((data) => {
         console.log("Logged in!", data);
+        document.getElementById("response-message").innerHTML = "Success: <br/>" + JSON.stringify(data);
       })
       .catch((err) => {
         console.error("Failed to login", err);
+        document.getElementById("response-message").innerHTML = err.message;
       });
   };
 
@@ -35,6 +37,7 @@ const Login = () => {
 
         <button type="submit">Login</button>
       </form>
+      <div id="response-message"></div>
     </div>
   );
 };
