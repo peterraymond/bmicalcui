@@ -1,10 +1,5 @@
 import React from "react";
 import "./styles.css";
-import Signup from "./components/Signup";
-import Login from "./components/Login";
-import { Account } from "./components/Account";
-import Status from "./components/Status";
-import Settings from "./components/Settings";
 import Bmi from "./Bmi";
 import Nav from "./components/Nav"
 
