@@ -32,9 +32,11 @@ const App = () => {
   console.log("computeBmi: local bmiValue: " + bmiValue);
 
   const  user = UserPool.getCurrentUser()
-  console.log("user:", user);
-  console.log("username: ", user.getUsername());
 
+  if (user!=null){
+    console.log("user:", user);
+    console.log("username: ", user.getUsername());
+  }
 
     axios.get(ApiUrl, {
       params: {
@@ -94,7 +96,7 @@ const App = () => {
       <div className="row">
         <TextInput
           label="Height"
-          placeholder="height in cm"
+          placeholder="enter in cm"
           handleChange={handleHeightChange}
           value={height}
           type="number"
@@ -103,7 +105,7 @@ const App = () => {
       <div className="row">
         <TextInput
           label="Weight"
-          placeholder="weight in kg"
+          placeholder="enter in kg"
           handleChange={handleWeightChange}
           value={weight}
           type="number"

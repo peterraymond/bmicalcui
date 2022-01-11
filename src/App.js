@@ -25,11 +25,10 @@ const App = () => {
 */
 
 const App = () => {
-    return (
-         
+    return (  
         <div className="App">
-          <Bmi/>
           <Nav/>
+          <Bmi/>
         </div>
     );
   };

@@ -22,7 +22,7 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div >
       <h2>Login</h2>
       <form onSubmit={onSubmit}>
         <label htmlFor="email">Email</label>
@@ -35,7 +35,7 @@ const Login = () => {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         ></input>
-
+        <br/>
         <button type="submit">Login</button>
       </form>
       <div id="response-message"></div>

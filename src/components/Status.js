@@ -26,11 +26,11 @@ const Status = () => {
 
 
   return (
-    <div>
+    <div className="App">
       <br/>
       {(function() {
           if (loggedIn) {
-            return <div>You are logged in <button onClick={routeChange}>Logout</button></div>;
+            return <div className="App">You are logged in <button onClick={routeChange}>Logout</button></div>;
           } else {
             return "";
           }

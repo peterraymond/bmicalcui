@@ -2,7 +2,11 @@ import React from "react";
 
 const TextInput = (props) => {
   return (
-    <div >
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+  }}>
       <label className="label">{props.label}</label>
       <input 
              type={props.type} 

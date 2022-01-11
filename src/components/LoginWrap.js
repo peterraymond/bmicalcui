@@ -19,6 +19,7 @@ const LoginWrap = () => {
 
 
   return (
+    <div className="App">
       <Account>
         <Nav/>  
         <Status />
@@ -32,6 +33,7 @@ const LoginWrap = () => {
         
         {/*<Settings />*/}
       </Account>
+    </div>
 
   );
 };

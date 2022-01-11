@@ -24,8 +24,9 @@ const Signup = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <Nav/> 
+
       <h2>Signup</h2> 
       <form onSubmit={onSubmit}>
         <label htmlFor="email">Email</label>
