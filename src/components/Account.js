@@ -29,8 +29,9 @@ const Account = (props) => {
       const authDetails = new AuthenticationDetails({ Username, Password });
 
       user.authenticateUser(authDetails, {
+        
         onSuccess: (data) => {
-          console.log("onSuccess: ", data);
+          console.log("Account.js onSuccess: ", data);
           resolve(data);
         },
         onFailure: (err) => {

@@ -7,7 +7,7 @@ const TextInput = (props) => {
       alignItems: 'center',
       justifyContent: 'center',
   }}>
-      <label className="label">{props.label}</label>
+      <label className="label">{props.label}</label>&nbsp;
       <input 
              type={props.type} 
              value={props.value}

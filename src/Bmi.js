@@ -24,21 +24,21 @@ const App = () => {
 
   const computeBmi = () => {
     
-  let bmiValue = 0; //(weight / (height / 100) ** 2).toFixed(1);
+    let bmiValue = 0; //(weight / (height / 100) ** 2).toFixed(1);
 
-  let ApiUrl = 'https://30zat9xfgj.execute-api.eu-west-2.amazonaws.com/dev';
-   //let ApiUrl = 'http://localhost:4000/bmi';
+    let BmiApiUrl = 'https://30zat9xfgj.execute-api.eu-west-2.amazonaws.com/dev';
+    //let ApiUrl = 'http://localhost:4000/bmi';
 
-  console.log("computeBmi: local bmiValue: " + bmiValue);
+    console.log("computeBmi: local bmiValue: " + bmiValue);
 
-  const  user = UserPool.getCurrentUser()
+    const  user = UserPool.getCurrentUser()
 
-  if (user!=null){
-    console.log("user:", user);
-    console.log("username: ", user.getUsername());
-  }
+    if (user!=null){
+      console.log("user:", user);
+      console.log("username: ", user.getUsername());
+    }
 
-    axios.get(ApiUrl, {
+    axios.get(BmiApiUrl, {
       params: {
          weight: weight,
          height: height
@@ -51,22 +51,14 @@ const App = () => {
       setBmi(bmiValue);
       let bmiClass = getBmi(bmiValue);
       setBmiClass(bmiClass);
-      setHeight("")
-      setWeight("")
+      //setHeight("")
+      //setWeight("")
 
     })
     .catch(err => {
         // Handle Error Here
         console.error(err);
     });
-
-    // working local version
-    //setBmi(bmiValue);
-    //let bmiClass = getBmi(bmiValue);
-    //setBmiClass(bmiClass);
-    //setHeight("")
-    //setWeight("")
-
   };
 
 
@@ -76,7 +68,7 @@ const App = () => {
       return "Underweight";
     }
     if (bmi >= 18.5 && bmi < 24.9) {
-      return "Normal weight";
+      return "Healthy weight";
     }
     if (bmi >= 25 && bmi < 29.9) {
       return "Overweight";
@@ -113,15 +105,12 @@ const App = () => {
         />
       </div>
 
-
       <div>
         <Button label="Calculate" onClick={computeBmi} />
       </div>
       <div>
         {/*isNaN(bmi)?null:<h3>Browser calculated BMI  = {bmi}</h3>*/ }
-        {isNaN(bmi)?null:<h3>BMI  = {remoteBmi}</h3>}
-        <h3>{bmiClass}</h3>
-
+        {isNaN(bmi)?null:<h4>{weight}kg {height}cm: BMI  = {remoteBmi} {bmiClass}</h4> }
         {isNaN(bmi) && calcRequested ? <div>Did you enter numbers?!</div> : ""}
 
       </div>

@@ -1,11 +1,8 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, {    } from "react";
 import "../styles.css";
-import Signup from "./Signup";
 import Login from "./Login";
 import { Account } from "./Account";
 import Status from "./Status";
-import Settings from "./Settings";
-import { AccountContext } from "./Account";
 import Nav from "./Nav";
 import UserPool from "../UserPool";
 
@@ -22,17 +19,16 @@ const LoginWrap = () => {
     <div className="App">
       <Account>
         <Nav/>  
-        <Status />
-
         {(function() {
           if (user == null) {
             return <Login />
           }
         })()}
 
-        
+      <Status />
         {/*<Settings />*/}
       </Account>
+
     </div>
 
   );

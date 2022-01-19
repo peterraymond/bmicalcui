@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../bmicalc"
+		},
+		{
+			"path": "../bmicalcdb"
+		}
+	],
+	"settings": {}
+}

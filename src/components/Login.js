@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AccountContext } from "./Account";
 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -11,9 +12,22 @@ const Login = () => {
     event.preventDefault();
 
     authenticate(email, password)
-      .then((data) => {
-        console.log("Logged in!", data);
-        document.getElementById("response-message").innerHTML = "Success: <br/>" + JSON.stringify(data);
+      .then((result) => {
+        console.log("Logged in!!", result);
+
+        var accessToken = result.getAccessToken().getJwtToken();
+        console.log("accessToken: ", accessToken);
+
+
+
+        /* Use the idToken for Logins Map when Federating User Pools with identity pools or when passing through an Authorization Header to an API Gateway Authorizer */
+        var idToken = result.idToken.jwtToken;
+        console.log("idToken: ", idToken);
+
+        //UserContext.Provider.
+
+
+        document.getElementById("response-message").innerHTML = "Success: <br/>" + JSON.stringify(result);
       })
       .catch((err) => {
         console.error("Failed to login", err);
@@ -24,14 +38,15 @@ const Login = () => {
   return (
     <div >
       <h2>Login</h2>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} >
         <label htmlFor="email">Email</label>
-        <input
+        <input autoComplete="on" 
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         ></input>
         <label htmlFor="password">Password</label>
         <input
+          type="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         ></input>

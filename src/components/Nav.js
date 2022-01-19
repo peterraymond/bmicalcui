@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const Nav = () => (
     <div>
@@ -8,6 +8,8 @@ const Nav = () => (
         <Link to="/signup">Signup</Link>
         &nbsp;&nbsp;
         <Link to="/login">Login</Link>
+        &nbsp;&nbsp;
+        <Link to="/calc-list">Calcs</Link>
     </div>
 );
 

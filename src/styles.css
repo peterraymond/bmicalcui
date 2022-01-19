@@ -1,77 +1,77 @@
 .App {
-    font-family: sans-serif;
-    text-align: center;
+  font-family: sans-serif;
+  text-align: center;
 
-        /*added to to understand the layout
-    border: 1px solid #b22222;
-    border-radius: 1px;
-    */
-  }
-
-
-  .container {
-    width: 100%;
-    /*height: 100%;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
+      /*added to to understand the layout
+  border: 1px solid #b22222;
+  border-radius: 1px;
+  */
+}
 
 
-    
-    /*added to to understand the layout
-    
-    border: 1px solid #22b235;
-    border-radius: 1px;
-    
-    */
-  }
-  .row {
+.container {
+  width: 100%;
+  /*height: 100%;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
 
-    width: 25%;
-    padding: 5px;
-    align-items: center;
 
-    /*
-    border: 1px solid #2c22b2;
-    border-radius: 1px;
-    */
+  
+  /*added to to understand the layout
+  
+  border: 1px solid #22b235;
+  border-radius: 1px;
+  
+  */
+}
+.row {
 
-  }
-  .label {
-    padding: 3px;
-    margin-right: 1px;
-    float: left;
-    font-size: 14px;
+  width: 25%;
+  padding: 5px;
+  align-items: center;
 
-    /*
-    border: 1px solid #B22222;
-    border-radius: 1px;
-    */    
-  }
+  /*
+  border: 1px solid #2c22b2;
+  border-radius: 1px;
+  */
+
+}
+.label {
+  padding: 3px;
+  margin-right: 1px;
+  float: left;
+  font-size: 14px;
+
+  /*
+  border: 1px solid #B22222;
+  border-radius: 1px;
+  */    
+}
 
 /* thesea the sign in form I think */
-  label {
-    display: block;
-    margin-top: 8px;
-    font-size: 14px;
-  }
-  
-  * {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  /* hight and weight */
-  input {
-    height: 14px;
-    width: 200px;
-    font-size: 14px;
-  }
-  
-  button {
+label {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+}
 
-    margin-top: 12px;
-    height: 24px;
-    font-size: 14px;
-  }
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* hight and weight */
+input {
+  height: 14px;
+  width: 200px;
+  font-size: 14px;
+}
+
+button {
+
+  margin-top: 12px;
+  height: 24px;
+  font-size: 14px;
+}
